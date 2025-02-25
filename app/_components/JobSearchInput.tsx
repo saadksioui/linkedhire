@@ -19,7 +19,7 @@ const JobSearchInput = () => {
           placeholder="Filter by title, companies, expertise..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="border-none focus:ring-0 bg-transparent text-gray-700 dark:text-white"
+          className="border-none shadow-none outline-none focus-visible:ring-0 bg-transparent text-gray-700 dark:text-white"
         />
       </div>
 
@@ -31,7 +31,7 @@ const JobSearchInput = () => {
           placeholder="Filter by location..."
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="border-none focus:ring-0 bg-transparent text-gray-700 dark:text-white"
+          className="border-none shadow-none outline-none focus-visible:ring-0 bg-transparent text-gray-700 dark:text-white"
         />
       </div>
 
