@@ -9,7 +9,7 @@ const Hero = () => {
         <Card />
         <Card />
       </div>
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center my-5">
         <Button className="w-fit mt-7 bg-blue-600 hover:bg-blue-700">Show More</Button>
       </div>
     </div>
