@@ -1,19 +1,12 @@
 export interface Job {
-  id: number;
-  url: string;
-  jobSlug: string;
+  _id: string;
   jobTitle: string;
   companyName: string;
   companyLogo: string;
-  jobIndustry: string[];
-  jobType: string[];
   jobGeo: string;
-  jobLevel: string;
-  jobExcerpt: string;
-  jobDescription: string;
-  pubDate: string;
-  annualSalaryMin: number;
-  annualSalaryMax: number;
-  salaryCurrency: string;
+  description: string;
+  url: string;
+  jobType: string;
+  created_at: string;
 }
 
