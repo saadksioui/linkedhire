@@ -5,6 +5,7 @@ import Card from "./Card";
 import { useEffect, useState } from "react";
 import { Job } from "@/types/jobs";
 import { getJobs } from "@/actions/getJobs";
+import Link from "next/link";
 
 const Hero = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -45,7 +46,9 @@ const Hero = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {jobs.map((job, index) => (
-                <Card key={index} job={job} />
+                <Link href={`/job/${job.title}`} key={index}>
+                  <Card job={job} />
+                </Link>
               ))}
             </div>
           )}
