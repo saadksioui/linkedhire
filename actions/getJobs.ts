@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function getJobs() {
   try {
-    const res = await axios.get("https://remotive.com/api/remote-jobs?limit=25");
+    const res = await axios.get("https://remotive.com/api/remote-jobs?limit=24");
     return res;  // Return the response when successful
   } catch (error: any) {
     if (error.response) {
