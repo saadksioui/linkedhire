@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import Header from "./_components/Header";
 import Hero from "./_components/Hero";
 import { useEffect, useState } from "react";
+import Footer from "./_components/Footer";
 
 const Home = () => {
   const { theme } = useTheme();
@@ -18,21 +19,12 @@ const Home = () => {
   }
 
   return (
-    <div className="">
-      {/* Header */}
-      <div
-        className="h-48 rounded-bl-[8rem]"
-        style={{
-          backgroundImage: `url("/stacked-waves-blue.svg")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <Header />
-      </div>
-      {/* Hero */}
-      <Hero />
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow pt-20">
+        <Hero />
+      </main>
+      <Footer />
     </div>
   )
 };

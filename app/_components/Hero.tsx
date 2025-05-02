@@ -1,69 +1,45 @@
-"use client";
+import React from 'react';
+import JobSearchInput from './JobSearchInput';
 
-import { Button } from "@/components/ui/button";
-import Card from "./Card";
-import { useEffect, useState } from "react";
-import { Job } from "@/types/jobs";
-import { getJobs } from "@/actions/getJobs";
-import Link from "next/link";
-
-const Hero = () => {
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchJobs = async () => {
-      setLoading(true);
-      try {
-        const JobsResponse = await getJobs();
-        setJobs(JobsResponse.data.jobs);
-        console.log(JobsResponse.data.jobs);
-
-      } catch (err: any) {
-        console.error(err); // Log the error for debugging
-        setError(err.message || "Failed to load jobs");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchJobs();
-  }, []);
-
+const Hero: React.FC = () => {
   return (
-    <div className="w-2/3 mx-auto mt-20">
-      {loading && <p className="text-center text-gray-600">Loading jobs...</p>}
+    <section className="bg-gradient-to-br from-blue-700 to-blue-800 text-white py-20 md:py-28 relative overflow-hidden dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10 dark:opacity-20">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -ml-24 -mt-24 dark:bg-gray-700"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full -mr-24 -mb-24 dark:bg-gray-700"></div>
+      </div>
 
-      {error && <p className="text-center text-red-600">{error}</p>}
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center">
+          <h1 className="max-w-3xl mx-auto text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight animate-fade-in">
+            Find Your Dream Job
+          </h1>
+          <p className="max-w-3xl mx-auto text-lg md:text-xl opacity-90 mb-8 animate-slide-up">
+            Discover thousands of job opportunities with the perfect companies. Your career journey starts here.
+          </p>
 
-      {!loading && !error && (
-        <>
-          {jobs.length === 0 ? (
-            <p className="text-center text-gray-600 text-lg font-semibold">
-              No jobs available at the moment. Please check back later!
-            </p>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {jobs.map((job, index) => (
-                <Link href={`/job/${job.title}`} key={index}>
-                  <Card job={job} />
-                </Link>
-              ))}
+          {/* Search Component */}
+          <JobSearchInput />
+
+          {/* Stats */}
+          <div className="mt-12 max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 text-center">
+            <div className="bg-white/10 backdrop-blur rounded-lg py-4 px-2 dark:bg-gray-700/40">
+              <p className="text-3xl font-bold text-white">10,000+</p>
+              <p className="text-white/90 text-sm">Active Job Listings</p>
             </div>
-          )}
-
-          <div className="w-full flex justify-center my-5">
-            <Button
-              className="w-fit mt-7 bg-blue-600 hover:bg-blue-700"
-              aria-label="Show more jobs"
-            >
-              Show More
-            </Button>
+            <div className="bg-white/10 backdrop-blur rounded-lg py-4 px-2 dark:bg-gray-700/40">
+              <p className="text-3xl font-bold text-white">1,000+</p>
+              <p className="text-white/90 text-sm">Companies Hiring</p>
+            </div>
+            <div className="hidden md:block bg-white/10 backdrop-blur rounded-lg py-4 px-2 dark:bg-gray-700/40">
+              <p className="text-3xl font-bold text-white">5M+</p>
+              <p className="text-white/90 text-sm">Happy Job Seekers</p>
+            </div>
           </div>
-        </>
-      )}
-    </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

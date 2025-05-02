@@ -16,7 +16,7 @@ const JobSearchInput = () => {
         <Search className="text-gray-500 w-5 h-5" />
         <Input
           type="text"
-          placeholder="Filter by title, companies, expertise..."
+          placeholder="Job title or keyword"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="border-none outline-none bg-transparent text-gray-700 dark:text-white shadow-none"
