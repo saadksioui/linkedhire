@@ -37,9 +37,9 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <BriefcaseBusiness className="h-8 w-8 text-blue-700 dark:text-blue-300" />
-            <span className="text-xl font-bold text-blue-700 dark:text-blue-300">
-              JobHub
+            <BriefcaseBusiness className="h-8 w-8 text-blue-700 dark:text-white" />
+            <span className="text-xl font-bold text-blue-700 dark:text-white">
+            LinkedHire
             </span>
           </Link>
 
@@ -47,8 +47,8 @@ const Navbar: React.FC = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <NavLink href="/" label="Home" />
             <NavLink href="/jobs" label="Browse Jobs" />
-            <NavLink href="#about" label="About" />
-            <NavLink href="#contact" label="Contact" />
+            <NavLink href="/about" label="About" />
+            <NavLink href="/contact" label="Contact" />
             <ThemeSwitch />
           </nav>
 
@@ -72,8 +72,8 @@ const Navbar: React.FC = () => {
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <MobileNavLink href="/" label="Home" />
             <MobileNavLink href="/jobs" label="Browse Jobs" />
-            <MobileNavLink href="#about" label="About" />
-            <MobileNavLink href="#contact" label="Contact" />
+            <MobileNavLink href="/about" label="About" />
+            <MobileNavLink href="/contact" label="Contact" />
             <ThemeSwitch />
           </div>
         </div>

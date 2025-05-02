@@ -17,7 +17,7 @@ const ThemeSwitch = () => {
 
   return (
     <div className="flex items-center gap-2">
-      <Sun className="text-white dark:text-black"/>
+      <Sun className="text-black dark:text-white"/>
       <Switch
         defaultChecked={currentTheme === "dark"}
         onCheckedChange={(checked) => {
@@ -30,7 +30,7 @@ const ThemeSwitch = () => {
         checked={currentTheme === "dark"}
         disabled={!mount}
       />
-      <Moon className="text-white dark:text-black"/>
+      <Moon className="text-black dark:text-white"/>
     </div>
   )
 };
