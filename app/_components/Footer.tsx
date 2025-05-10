@@ -1,9 +1,7 @@
-
 import { Briefcase as BriefcaseBusiness, Mail, Facebook, Twitter, Linkedin, Instagram, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-neutral-900 text-white pt-16 pb-8">
@@ -82,7 +80,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-neutral-800 text-neutral-400 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>© {currentYear} JobHub. All rights reserved.</p>
+          <p>© 2025 JobHub. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#privacy" className="hover:text-white transition-colors">
               Privacy
