@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
               <p className="text-white/90 text-sm">Companies Hiring</p>
             </div>
             <div className="hidden md:block bg-white/10 backdrop-blur rounded-lg py-4 px-2 dark:bg-gray-700/40">
-              <p className="text-3xl font-bold text-white">5M+</p>
+              <p className="text-3xl font-bold text-white">5k+</p>
               <p className="text-white/90 text-sm">Happy Job Seekers</p>
             </div>
           </div>

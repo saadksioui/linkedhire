@@ -39,17 +39,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${poppins.className} antialiased`}
-      >
+      <body className={`${poppins.className} antialiased h-full w-full`}>
         <Provider>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col h-full w-full">
             <Header />
-            {children}
-
+            <main className="flex-1">{children}</main>
             <Footer />
           </div>
         </Provider>

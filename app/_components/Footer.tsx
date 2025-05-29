@@ -11,10 +11,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <BriefcaseBusiness className="h-8 w-8 text-primary-400" />
-              <span className="text-xl font-bold">JobHub</span>
+              <span className="text-xl font-bold">LinkedHire</span>
             </div>
             <p className="text-neutral-300 mb-4">
-              Find your dream job or the perfect candidate with JobHub's modern job portal platform.
+              Find your dream job or the perfect candidate with LinkedHire's modern job portal platform.
             </p>
             <div className="flex space-x-4">
               <SocialLink Icon={Facebook} href="#" ariaLabel="Facebook" />
@@ -80,7 +80,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-neutral-800 text-neutral-400 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>© 2025 JobHub. All rights reserved.</p>
+          <p>© 2025 LinkedHire. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#privacy" className="hover:text-white transition-colors">
               Privacy
