@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LinkedHire - Find Your Dream Job",
     description: "Discover and apply for jobs seamlessly with LinkedHire. Powered by LinkedIn API.",
-    url: "https://linkedhire.com",
+    url: "https://linkedhire.vercel.app/",
     siteName: "LinkedHire",
     type: "website",
   }
