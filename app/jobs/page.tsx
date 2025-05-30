@@ -14,6 +14,8 @@ const Jobs = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
   const searchParams = useSearchParams();
   const category = searchParams.get('category');
   const search = searchParams.get('search');
@@ -24,10 +26,9 @@ const Jobs = () => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        const JobsResponse = await getJobs(category!, search!);
+        const JobsResponse = await getJobs(category!, search!, 1);
         setJobs(JobsResponse.data.jobs);
-        console.log(JobsResponse.data.jobs);
-
+        setHasMore(JobsResponse.data.jobs.length > 0);
       } catch (err: any) {
         console.error(err); // Log the error for debugging
         setError(err.message || "Failed to load jobs");
@@ -37,8 +38,26 @@ const Jobs = () => {
     };
 
     fetchJobs();
-  }, []);
+    setPage(1);
+  }, [category, search]);
 
+  const handleShowMore = async () => {
+  setLoading(true);
+  try {
+    const nextPage = page + 1;
+    const JobsResponse = await getJobs(category!, search!, nextPage);
+    if (JobsResponse.data.jobs.length === 0) {
+      setHasMore(false); // No more jobs to load
+    } else {
+      setJobs(prev => [...prev, ...JobsResponse.data.jobs]);
+      setPage(nextPage);
+    }
+  } catch (err: any) {
+    setError(err.message || "Failed to load more jobs");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="mt-20">
@@ -82,8 +101,10 @@ const Jobs = () => {
             <Button
               className="w-fit mt-7 bg-blue-600 hover:bg-blue-700"
               aria-label="Show more jobs"
+              onClick={handleShowMore}
+              disabled={loading || !hasMore}
             >
-              Show More
+              {hasMore ? (loading ? "Loading..." : "Show More") : "No More Jobs"}
             </Button>
           </div>
         </>
