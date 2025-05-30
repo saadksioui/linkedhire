@@ -14,21 +14,13 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "LinkedHire - Find Your Dream Job",
   description: "LinkedHire helps professionals discover job opportunities from LinkedIn. Search, filter, and apply for jobs effortlessly.",
-  keywords: "job search, LinkedIn jobs, career, job opportunities, apply for jobs, remote work, tech jobs",
+  keywords: "job search, LinkedIn jobs, career, job opportunities, apply for jobs, remote work, tech jobs, remote jobs, remotive jobs, linkedin jobs, linkedin job search, linkedin jobs search, linkedin job postings, linkedin job postings search, linkedin job postings search, linkedin job postings search",
   authors: [{ name: "Saad", url: "https://saadksioui.pro/" }],
   openGraph: {
     title: "LinkedHire - Find Your Dream Job",
     description: "Discover and apply for jobs seamlessly with LinkedHire. Powered by LinkedIn API.",
     url: "https://linkedhire.com",
     siteName: "LinkedHire",
-    images: [
-      {
-        url: "https://linkedhire.com/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LinkedHire Job Search Platform",
-      },
-    ],
     type: "website",
   }
 };
