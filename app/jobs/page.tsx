@@ -8,6 +8,7 @@ import Link from "next/link";
 import Card from "../_components/Card";
 import { Briefcase } from "lucide-react";
 import { useSearchParams } from "next/navigation";
+import { slugify } from "@/lib/slugify";
 
 const Jobs = () => {
 
@@ -90,7 +91,7 @@ const Jobs = () => {
           ) : (
             <div className="w-2/3 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {jobs.map((job, index) => (
-                <Link href={`/jobs/${job.title}`} key={index}>
+                <Link href={`/jobs/detail?name=${job.title}`} key={index}>
                   <Card job={job} />
                 </Link>
               ))}
