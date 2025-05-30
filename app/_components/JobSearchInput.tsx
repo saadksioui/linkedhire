@@ -2,13 +2,20 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const JobSearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const route = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    route.push(`/jobs?search=${searchTerm}`);
+  }
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-0">
+    <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-0">
       {/* Job Search Input */}
       <div className="flex items-center gap-2 flex-1 border-b sm:border-b-0 sm:border-r border-gray-300 px-4">
         <Search className="text-gray-500 w-5 h-5" />
@@ -27,7 +34,7 @@ const JobSearchInput = () => {
           Search
         </Button>
       </div>
-    </div>
+    </form>
   );
 };
 

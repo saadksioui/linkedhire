@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-export async function getJobs(category: string = '') {
+export async function getJobs(category: string = '', search: string = '') {
   try {
+    if (search) {
+      const res = await axios.get(`https://remotive.com/api/remote-jobs?search=${search}&limit=24`);
+      return res;
+    }
     if (category) {
       const res = await axios.get(`https://remotive.com/api/remote-jobs?category=${category}&limit=24`);
       return res;  // Return the response when successful

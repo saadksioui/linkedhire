@@ -16,6 +16,7 @@ const Jobs = () => {
   const [error, setError] = useState<string | null>(null);
   const searchParams = useSearchParams();
   const category = searchParams.get('category');
+  const search = searchParams.get('search');
   console.log(category);
 
 
@@ -23,7 +24,7 @@ const Jobs = () => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        const JobsResponse = await getJobs(category!);
+        const JobsResponse = await getJobs(category!, search!);
         setJobs(JobsResponse.data.jobs);
         console.log(JobsResponse.data.jobs);
 

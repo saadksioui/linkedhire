@@ -40,10 +40,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={`${poppins.className} antialiased h-full w-full`}>
         <Provider>
-          <div className="flex flex-col h-full w-full">
+          <div className="flex flex-col h-full">
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
