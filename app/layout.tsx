@@ -4,6 +4,8 @@ import "./globals.css";
 import Provider from "./provider";
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
+import { Analytics } from "@vercel/analytics/next"
+
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -41,6 +43,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </Provider>
+        <Analytics />
       </body>
     </html>
   );
